@@ -1,12 +1,17 @@
-import { createStore } from 'redux';
-
+/*
 const initialState = {
   contacts: [],
   filter: '',
 };
+*/
 
-const rootReducer = (state = initialState, action) => {
+const contactsInitialState = [];
+const filterInitialState = '';
+
+export const contactsReducer = (state = contactsInitialState, action) => {
   return state;
 };
 
-export const store = createStore(rootReducer);
+export const filterReducer = (state = filterInitialState, action) => {
+  return state;
+};
