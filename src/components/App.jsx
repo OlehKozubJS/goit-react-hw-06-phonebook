@@ -5,6 +5,11 @@ import { Alert } from './Alert';
 import { nanoid } from 'nanoid';
 import PhonebookStyles from './PhonebookCSS/Pnonebook.module.css';
 import { useState, useEffect } from 'react';
+import {
+  addNewContact,
+  deleteContact,
+} from '../components/redux/contactsSlice';
+import {} from '../components/redux/filterSlice';
 
 export const App = () => {
   const [contacts, setContacts] = useState(
