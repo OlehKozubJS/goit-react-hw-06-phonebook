@@ -5,7 +5,11 @@ const filterInitialState = '';
 const filterSlice = createSlice({
   name: 'filter',
   initialState: filterInitialState,
-  reducers: {},
+  reducers: {
+    searchQueryInput(state, action) {
+      state = action.payload;
+    },
+  },
 });
 
 export const { setFilter } = filterSlice.actions;
