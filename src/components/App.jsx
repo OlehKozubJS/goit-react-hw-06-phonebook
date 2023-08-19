@@ -13,13 +13,12 @@ import {
 import { searchQueryInput } from '../components/redux/filterSlice';
 
 export const App = () => {
-  /*
   const [contacts, setContacts] = useState(
     JSON.parse(localStorage.getItem('contacts')) || []
   );
-  */
-  //const [filter, setFilter] = useState('');
-  //const [name, setName] = useState('');
+
+  const [filter, setFilter] = useState('');
+  const [name, setName] = useState('');
   const dispatch = useDispatch();
 
   useEffect(() => {
