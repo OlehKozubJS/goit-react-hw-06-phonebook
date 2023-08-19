@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const contactsInitialState = [];
-const filterInitialState = '';
 
-export const contactsReducer = (state = contactsInitialState, action) => {
-  return state;
-};
+export const contactsSlice = createSlice({
+  name: 'contacts',
+  initialState: contactsInitialState,
+  reducers: {},
+});
 
-export const filterReducer = (state = filterInitialState, action) => {
-  return state;
-};
+export const { setContacts } = contactsSlice.actions;
+export const contactsReducer = contactsSlice.reducer;
