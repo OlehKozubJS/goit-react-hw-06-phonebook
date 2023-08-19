@@ -9,7 +9,7 @@ import {
   addNewContact,
   deleteContact,
 } from '../components/redux/contactsSlice';
-import {} from '../components/redux/filterSlice';
+import { searchQueryInput } from '../components/redux/filterSlice';
 
 export const App = () => {
   const [contacts, setContacts] = useState(
