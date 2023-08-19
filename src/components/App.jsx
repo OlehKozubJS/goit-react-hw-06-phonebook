@@ -13,16 +13,19 @@ import {
 import { searchQueryInput } from '../components/redux/filterSlice';
 
 export const App = () => {
+  /*
   const [contacts, setContacts] = useState(
     JSON.parse(localStorage.getItem('contacts')) || []
   );
-  const [filter, setFilter] = useState('');
-  const [name, setName] = useState('');
+  */
+  //const [filter, setFilter] = useState('');
+  //const [name, setName] = useState('');
+  const dispatch = useDispatch();
 
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
-
+  /*
   const addNewContact = data => {
     if (
       contacts.some(
@@ -35,7 +38,7 @@ export const App = () => {
     setContacts(prevState => [...prevState, { id: nanoid(), ...data }]);
     setName('');
   };
-
+*/
   const filteredContacts = () => {
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
@@ -49,13 +52,13 @@ export const App = () => {
   const searchQueryInput = value => {
     setFilter(value);
   };
-
+  /*
   const deleteContact = id => {
     setContacts(prevState => prevState.filter(contact => contact.id !== id));
   };
-
-  const HandleDelete = data => useDispatch(deleteContact(data));
-  const HandleAdd = id => useDispatch(addNewContact(id));
+*/
+  const HandleDelete = data => dispatch(deleteContact(data));
+  const HandleAdd = id => dispatch(addNewContact(id));
 
   return (
     <div className={PhonebookStyles.phonebook}>
