@@ -49,16 +49,7 @@ export const App = () => {
   };
 
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-      className={PhonebookStyles.phonebook}
-    >
+    <div className={PhonebookStyles.phonebook}>
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
       <ContactForm submitFunction={addNewContact} />
       <Alert isInContacts={!!name} name={name} clickFunction={closeAlert} />
