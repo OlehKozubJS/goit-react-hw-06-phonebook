@@ -5,6 +5,7 @@ import { Alert } from './Alert';
 import { nanoid } from 'nanoid';
 import PhonebookStyles from './PhonebookCSS/Pnonebook.module.css';
 import { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import {
   addNewContact,
   deleteContact,
