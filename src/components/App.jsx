@@ -54,17 +54,20 @@ export const App = () => {
     setContacts(prevState => prevState.filter(contact => contact.id !== id));
   };
 
+  const HandleDelete = data => useDispatch(deleteContact(data));
+  const HandleAdd = id => useDispatch(addNewContact(id));
+
   return (
     <div className={PhonebookStyles.phonebook}>
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
-      <ContactForm submitFunction={addNewContact} />
+      <ContactForm submitFunction={HandleAdd} />
       <Alert isInContacts={!!name} name={name} clickFunction={closeAlert} />
       <h2 className={PhonebookStyles.contactsHeader}>Contacts</h2>
       <Filter className="filterInput" changeFunction={searchQueryInput} />
       <ContactList
         className="contactList"
         items={filter ? filteredContacts() : contacts}
-        clickFunction={deleteContact}
+        clickFunction={HandleDelete}
       />
     </div>
   );
