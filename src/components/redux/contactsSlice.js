@@ -10,12 +10,13 @@ const contactsSlice = createSlice({
     addNewContact(state, action) {
       if (
         state.some(
-          contact => contact.name.toLowerCase() === data.name.toLowerCase()
+          contact =>
+            contact.name.toLowerCase() === action.payload.name.toLowerCase()
         )
       ) {
         return;
       }
-      setContacts(prevState => [...prevState, { id: nanoid(), ...data }]);
+      state = [...state, { id: nanoid(), ...action.payload }];
     },
   },
 });
