@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 import PhonebookStyles from './PhonebookCSS/Pnonebook.module.css';
 import { useState, useEffect } from 'react';
 
-export const Phonebook = () => {
+export const App = () => {
   const [contacts, setContacts] = useState(
     JSON.parse(localStorage.getItem('contacts')) || []
   );
@@ -49,7 +49,16 @@ export const Phonebook = () => {
   };
 
   return (
-    <div className={PhonebookStyles.phonebook}>
+    <div
+      style={{
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        fontSize: 40,
+        color: '#010101',
+      }}
+      className={PhonebookStyles.phonebook}
+    >
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
       <ContactForm submitFunction={addNewContact} />
       <Alert isInContacts={!!name} name={name} clickFunction={closeAlert} />
