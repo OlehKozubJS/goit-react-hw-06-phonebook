@@ -5,6 +5,7 @@ body {
 }
 
 .phonebook {
+  margin-inline: auto;
   width: 500px;
 }
 
