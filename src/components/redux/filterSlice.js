@@ -7,3 +7,6 @@ export const filterSlice = createSlice({
   initialState: filterInitialState,
   reducers: {},
 });
+
+export const { setFilter } = filterSlice.actions;
+export const filterReducer = filterSlice.reducer;
