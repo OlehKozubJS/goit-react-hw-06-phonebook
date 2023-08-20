@@ -18,6 +18,12 @@ export const App = () => {
   const [name, setName] = useState('');
   const dispatch = useDispatch();
 
+  const filteredContacts = data => {
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(data.toLowerCase())
+    );
+  };
+
   const handleDelete = data => dispatch(deleteContact(data));
   const handleAdd = id => dispatch(addNewContact(id));
   const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
