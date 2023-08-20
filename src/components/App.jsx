@@ -27,11 +27,7 @@ export const App = () => {
   const closeAlert = () => {
     setName('');
   };
-  /*
-  const searchQueryInput = value => {
-    setFilter(value);
-  };
-*/
+
   const handleDelete = data => dispatch(deleteContact(data));
   const handleAdd = id => dispatch(addNewContact(id));
   const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
