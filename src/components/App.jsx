@@ -33,7 +33,7 @@ export const App = () => {
 
   useEffect(() => {
     console.log(handleFilteredContacts(contacts).payload);
-  }, [filter]);
+  }, []);
 
   return (
     <div className={PhonebookStyles.phonebook}>
