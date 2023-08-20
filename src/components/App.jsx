@@ -14,7 +14,7 @@ import { searchQueryInput } from '../components/redux/filterSlice';
 
 export const App = () => {
   const contacts = useSelector(state => state.contacts);
-  const filter = useSelector(state => state.filter);
+  const filterc = useSelector(state => state.filter);
   const [name, setName] = useState('');
   const dispatch = useDispatch();
 
@@ -24,7 +24,7 @@ export const App = () => {
 
   const filteredContacts = () => {
     return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
+      contact.name.toLowerCase().includes(filterc.toLowerCase())
     );
   };
 
@@ -41,7 +41,7 @@ export const App = () => {
       <Filter className="filterInput" changeFunction={handleSearchQueryInput} />
       <ContactList
         className="contactList"
-        items={filter ? filteredContacts() : contacts}
+        items={filterc ? filteredContacts() : contacts}
         clickFunction={handleDelete}
       />
     </div>
