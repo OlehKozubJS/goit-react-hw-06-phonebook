@@ -3,7 +3,7 @@ import { ContactList } from './ContactList';
 import { Filter } from './Filter';
 import { Alert } from './Alert';
 import PhonebookStyles from './PhonebookCSS/Pnonebook.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import {
@@ -31,9 +31,12 @@ export const App = () => {
     setName('');
   };
 
+  useEffect(() => {
+    console.log(handleFilteredContacts(contacts).payload);
+  }, [contacts]);
+
   return (
     <div className={PhonebookStyles.phonebook}>
-      {`${handleFilteredContacts(contacts)}`}
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
       <ContactForm submitFunction={handleAdd} />
       <Alert isInContacts={!!name} name={name} clickFunction={closeAlert} />
