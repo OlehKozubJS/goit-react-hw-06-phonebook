@@ -7,14 +7,15 @@ const filterSlice = createSlice({
   initialState: filterInitialState,
   reducers: {
     searchQueryInput(state, action) {
-      state = action.payload;
+      state.filter = action.payload;
       return state;
     },
     getFilteredContacts(state, action) {
       const filteredContacts = action.payload.filter(contact =>
         contact.name.toLowerCase().includes(state.toLowerCase())
       );
-      return filteredContacts;
+      state.filteredContacts = filteredContacts;
+      return state;
     },
   },
 });
