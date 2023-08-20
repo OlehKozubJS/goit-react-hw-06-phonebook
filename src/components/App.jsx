@@ -45,7 +45,7 @@ export const App = () => {
       <Filter className="filterInput" changeFunction={handleSearchQueryInput} />
       <ContactList
         className="contactList"
-        items={filter}
+        items={filter.filteredContacts}
         clickFunction={handleDelete}
       />
     </div>
