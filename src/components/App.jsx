@@ -14,7 +14,7 @@ import { searchQueryInput } from '../components/redux/filterSlice';
 
 export const App = () => {
   const contacts = useSelector(state => state.contacts);
-  const filterc = useSelector(state => state.filter);
+  const filter = useSelector(state => state.filter);
   const [name, setName] = useState('');
   const dispatch = useDispatch();
 
@@ -35,7 +35,7 @@ export const App = () => {
       <Filter className="filterInput" changeFunction={handleSearchQueryInput} />
       <ContactList
         className="contactList"
-        items={filterc ? filteredContacts() : contacts}
+        items={filter ? filteredContacts() : contacts}
         clickFunction={handleDelete}
       />
     </div>
