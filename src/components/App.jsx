@@ -22,12 +22,6 @@ export const App = () => {
   const handleAdd = id => dispatch(addNewContact(id));
   const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
 
-  const filteredContacts = () => {
-    return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filterc.toLowerCase())
-    );
-  };
-
   const closeAlert = () => {
     setName('');
   };
