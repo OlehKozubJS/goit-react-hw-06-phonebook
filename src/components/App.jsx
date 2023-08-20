@@ -24,20 +24,7 @@ export const App = () => {
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
-  /*
-  const addNewContact = data => {
-    if (
-      contacts.some(
-        contact => contact.name.toLowerCase() === data.name.toLowerCase()
-      )
-    ) {
-      setName(data.name);
-      return;
-    }
-    setContacts(prevState => [...prevState, { id: nanoid(), ...data }]);
-    setName('');
-  };
-*/
+
   const filteredContacts = () => {
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
@@ -51,11 +38,7 @@ export const App = () => {
   const searchQueryInput = value => {
     setFilter(value);
   };
-  /*
-  const deleteContact = id => {
-    setContacts(prevState => prevState.filter(contact => contact.id !== id));
-  };
-*/
+
   const handleDelete = data => dispatch(deleteContact(data));
   const handleAdd = id => dispatch(addNewContact(id));
 
