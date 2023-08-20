@@ -33,6 +33,7 @@ export const App = () => {
   const closeAlert = () => {
     setName('');
   };
+
   return (
     <div className={PhonebookStyles.phonebook}>
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
