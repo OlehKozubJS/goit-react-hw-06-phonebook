@@ -33,6 +33,7 @@ export const App = () => {
 
   useEffect(() => {
     console.log(handleFilteredContacts(contacts).payload);
+    console.log(filter);
   }, []);
 
   return (
@@ -44,7 +45,7 @@ export const App = () => {
       <Filter className="filterInput" changeFunction={handleSearchQueryInput} />
       <ContactList
         className="contactList"
-        items={filter ? '' : contacts}
+        items={filter}
         clickFunction={handleDelete}
       />
     </div>
