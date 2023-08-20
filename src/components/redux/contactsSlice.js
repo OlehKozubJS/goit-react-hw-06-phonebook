@@ -8,14 +8,6 @@ const contactsSlice = createSlice({
   initialState: contactsInitialState,
   reducers: {
     addNewContact(state, action) {
-      if (
-        state.some(
-          contact =>
-            contact.name.toLowerCase() === action.payload.name.toLowerCase()
-        )
-      ) {
-        return;
-      }
       return [...state, { id: nanoid(), ...action.payload }];
     },
     deleteContact(state, action) {
