@@ -10,9 +10,14 @@ const filterSlice = createSlice({
       state = action.payload;
       return state;
     },
-    getFilteredContacts() {},
+    getFilteredContacts(state, action) {
+      const filteredContacts = state.filter(contact =>
+        contact.name.toLowerCase().includes(action.payload.toLowerCase())
+      );
+      return filteredContacts;
+    },
   },
 });
 
-export const { searchQueryInput } = filterSlice.actions;
+export const { searchQueryInput, getFilteredContacts } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;
