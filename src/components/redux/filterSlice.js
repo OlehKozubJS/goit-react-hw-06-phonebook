@@ -12,7 +12,7 @@ const filterSlice = createSlice({
     },
     getFilteredContacts(state, action) {
       const filteredContacts = action.payload.filter(contact =>
-        contact.name.toLowerCase().includes(state.toLowerCase())
+        contact.name.toLowerCase().includes(state.filter.toLowerCase())
       );
       state.filteredContacts = filteredContacts;
       return state;
