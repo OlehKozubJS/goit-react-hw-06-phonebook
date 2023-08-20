@@ -27,11 +27,11 @@ export const App = () => {
   const closeAlert = () => {
     setName('');
   };
-
+  /*
   const searchQueryInput = value => {
     setFilter(value);
   };
-
+*/
   const handleDelete = data => dispatch(deleteContact(data));
   const handleAdd = id => dispatch(addNewContact(id));
   const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
@@ -42,7 +42,7 @@ export const App = () => {
       <ContactForm submitFunction={handleAdd} />
       <Alert isInContacts={!!name} name={name} clickFunction={closeAlert} />
       <h2 className={PhonebookStyles.contactsHeader}>Contacts</h2>
-      <Filter className="filterInput" changeFunction={searchQueryInput} />
+      <Filter className="filterInput" changeFunction={handleSearchQueryInput} />
       <ContactList
         className="contactList"
         items={filter ? filteredContacts() : contacts}
