@@ -3,8 +3,9 @@ import { ContactList } from './ContactList';
 import { Filter } from './Filter';
 import { Alert } from './Alert';
 import PhonebookStyles from './PhonebookCSS/Pnonebook.module.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
   addNewContact,
   deleteContact,
@@ -12,17 +13,10 @@ import {
 import { searchQueryInput } from '../components/redux/filterSlice';
 
 export const App = () => {
-  const [contacts, setContacts] = useState(
-    JSON.parse(localStorage.getItem('contacts')) || []
-  );
-
+  const contacts = useSelector(state => state.contacts);
   const [filter, setFilter] = useState('');
   const [name, setName] = useState('');
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
-  }, [contacts]);
 
   const filteredContacts = () => {
     return contacts.filter(contact =>
