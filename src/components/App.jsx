@@ -33,6 +33,7 @@ export const App = () => {
 
   return (
     <div className={PhonebookStyles.phonebook}>
+      {`${handleFilteredContacts(contacts)}`}
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
       <ContactForm submitFunction={handleAdd} />
       <Alert isInContacts={!!name} name={name} clickFunction={closeAlert} />
@@ -40,7 +41,7 @@ export const App = () => {
       <Filter className="filterInput" changeFunction={handleSearchQueryInput} />
       <ContactList
         className="contactList"
-        items={filter ? handleFilteredContacts(contacts) : contacts}
+        items={filter ? '' : contacts}
         clickFunction={handleDelete}
       />
     </div>
