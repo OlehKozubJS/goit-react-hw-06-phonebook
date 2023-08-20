@@ -19,9 +19,11 @@ export const App = () => {
   const dispatch = useDispatch();
 
   const filteredContacts = data => {
-    return contacts.filter(contact =>
+    const filteredContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(data.toLowerCase())
     );
+    console.log(filteredContacts);
+    return filteredContacts;
   };
 
   const handleDelete = data => dispatch(deleteContact(data));
