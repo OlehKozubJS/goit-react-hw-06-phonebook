@@ -2,7 +2,6 @@ import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
 import { Filter } from './Filter';
 import { Alert } from './Alert';
-import { nanoid } from 'nanoid';
 import PhonebookStyles from './PhonebookCSS/Pnonebook.module.css';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
