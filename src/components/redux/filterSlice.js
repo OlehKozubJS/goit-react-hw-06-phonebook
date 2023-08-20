@@ -10,6 +10,7 @@ const filterSlice = createSlice({
       state = action.payload;
       return state;
     },
+    getFilteredContacts() {},
   },
 });
 
