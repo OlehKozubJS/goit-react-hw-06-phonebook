@@ -16,7 +16,7 @@ const contactsSlice = createSlice({
       ) {
         return;
       }
-      state = [...state, { id: nanoid(), ...action.payload }];
+      return [...state, { id: nanoid(), ...action.payload }];
     },
     deleteContact(state, action) {
       state.filter(contact => contact.id !== action.payload);
