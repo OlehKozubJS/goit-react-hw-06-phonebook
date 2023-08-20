@@ -13,7 +13,9 @@ const contactsSlice = createSlice({
       return contacts;
     },
     deleteContact(state, action) {
-      return state.filter(contact => contact.id !== action.payload);
+      const contacts = state.filter(contact => contact.id !== action.payload);
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+      return contacts;
     },
   },
 });
