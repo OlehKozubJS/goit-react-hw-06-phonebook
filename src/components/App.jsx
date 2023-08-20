@@ -10,7 +10,10 @@ import {
   addNewContact,
   deleteContact,
 } from '../components/redux/contactsSlice';
-import { searchQueryInput } from '../components/redux/filterSlice';
+import {
+  searchQueryInput,
+  getFilteredContacts,
+} from '../components/redux/filterSlice';
 
 export const App = () => {
   const contacts = useSelector(state => state.contacts);
@@ -18,17 +21,11 @@ export const App = () => {
   const [name, setName] = useState('');
   const dispatch = useDispatch();
 
-  const filteredContacts = data => {
-    const filteredContacts = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(data.toLowerCase())
-    );
-    console.log(filteredContacts);
-    return filteredContacts;
-  };
-
   const handleDelete = data => dispatch(deleteContact(data));
   const handleAdd = id => dispatch(addNewContact(id));
   const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
+  const handleFilteredContacts = contacts =>
+    dispatch(getFilteredContacts(contacts));
 
   const closeAlert = () => {
     setName('');
@@ -43,7 +40,7 @@ export const App = () => {
       <Filter className="filterInput" changeFunction={handleSearchQueryInput} />
       <ContactList
         className="contactList"
-        items={filter ? filteredContacts(filter) : contacts}
+        items={filter ? handleFilteredContacts(contacts) : contacts}
         clickFunction={handleDelete}
       />
     </div>
