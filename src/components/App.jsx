@@ -14,6 +14,7 @@ import { searchQueryInput } from '../components/redux/filterSlice';
 
 export const App = () => {
   const contacts = useSelector(state => state.contacts);
+  const filter = useSelector(state => state.filter);
   const [name, setName] = useState('');
   const dispatch = useDispatch();
 
