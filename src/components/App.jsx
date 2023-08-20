@@ -16,6 +16,7 @@ export const App = () => {
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
   const [name, setName] = useState('');
+  const [renderNumber, setRenderNumber] = useState(0);
   const dispatch = useDispatch();
 
   const filteredContacts = data => {
@@ -33,9 +34,9 @@ export const App = () => {
   const closeAlert = () => {
     setName('');
   };
-
   return (
     <div className={PhonebookStyles.phonebook}>
+      {setRenderNumber(prevState => (prevState += 1))}
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
       <ContactForm submitFunction={handleAdd} />
       <Alert isInContacts={!!name} name={name} clickFunction={closeAlert} />
