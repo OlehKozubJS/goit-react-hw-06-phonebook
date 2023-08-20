@@ -2,6 +2,17 @@ import propTypes from 'prop-types';
 import ContactFormStyles from './PhonebookCSS/ContactForm.module.css';
 
 export const ContactForm = ({ submitFunction }) => {
+  /*
+      if (
+        state.some(
+          contact =>
+            contact.name.toLowerCase() === action.payload.name.toLowerCase()
+        )
+      ) {
+        return;
+      }
+*/
+
   const handleSubmit = event => {
     event.preventDefault();
     const { name, number } = event.currentTarget.elements;
