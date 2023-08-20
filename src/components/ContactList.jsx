@@ -1,10 +1,12 @@
-import propTypes from 'prop-types';
 import ContactListStyles from './PhonebookCSS/ContactList.module.css';
+import { useSelector } from 'react-redux';
 
-export const ContactList = ({ items, clickFunction }) => {
+export const ContactList = ({ clickFunction }) => {
+  const contacts = useSelector(state => state.contacts);
+
   return (
     <ul className={ContactListStyles.contactList}>
-      {items.map(item => (
+      {contacts.map(item => (
         <li key={item.id} className={ContactListStyles.contactListItem}>
           <span className={ContactListStyles.contactListItemText}>
             {item.name}: {item.number}
@@ -20,15 +22,4 @@ export const ContactList = ({ items, clickFunction }) => {
       ))}
     </ul>
   );
-};
-
-ContactList.propTypes = {
-  items: propTypes.arrayOf(
-    propTypes.shape({
-      id: propTypes.string.isRequired,
-      name: propTypes.string.isRequired,
-      number: propTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
-  clickFunction: propTypes.func.isRequired,
 };
