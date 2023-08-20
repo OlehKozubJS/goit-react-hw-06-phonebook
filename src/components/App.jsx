@@ -20,7 +20,7 @@ export const App = () => {
 
   const filteredContacts = () => {
     return contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
+      contact.name.toLowerCase().includes(handleSearchQueryInput.toLowerCase())
     );
   };
 
@@ -34,6 +34,7 @@ export const App = () => {
 
   const handleDelete = data => dispatch(deleteContact(data));
   const handleAdd = id => dispatch(addNewContact(id));
+  const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
 
   return (
     <div className={PhonebookStyles.phonebook}>
