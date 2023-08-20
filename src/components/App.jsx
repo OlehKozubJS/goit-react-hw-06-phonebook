@@ -14,9 +14,12 @@ import { searchQueryInput } from '../components/redux/filterSlice';
 
 export const App = () => {
   const contacts = useSelector(state => state.contacts);
-  const [filter, setFilter] = useState('');
   const [name, setName] = useState('');
   const dispatch = useDispatch();
+
+  const handleDelete = data => dispatch(deleteContact(data));
+  const handleAdd = id => dispatch(addNewContact(id));
+  const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
 
   const filteredContacts = () => {
     return contacts.filter(contact =>
@@ -27,10 +30,6 @@ export const App = () => {
   const closeAlert = () => {
     setName('');
   };
-
-  const handleDelete = data => dispatch(deleteContact(data));
-  const handleAdd = id => dispatch(addNewContact(id));
-  const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
 
   return (
     <div className={PhonebookStyles.phonebook}>
