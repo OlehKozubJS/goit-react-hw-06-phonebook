@@ -7,7 +7,8 @@ const filterSlice = createSlice({
   initialState: filterInitialState,
   reducers: {
     searchQueryInput(state, action) {
-      return action.payload;
+      state = action.payload;
+      return state;
     },
   },
 });
