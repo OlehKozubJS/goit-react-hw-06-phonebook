@@ -32,12 +32,12 @@ export const App = () => {
   };
 
   useEffect(() => {
-    console.log(handleFilteredContacts(contacts).payload);
-    console.log(filter);
-  }, [handleSearchQueryInput]);
+    handleFilteredContacts(contacts);
+  }, [filter.filter]);
 
   return (
     <div className={PhonebookStyles.phonebook}>
+      <div>{JSON.stringify(filter.filteredContacts) + ' ' + filter.filter}</div>
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
       <ContactForm submitFunction={handleAdd} />
       <Alert isInContacts={!!name} name={name} clickFunction={closeAlert} />
