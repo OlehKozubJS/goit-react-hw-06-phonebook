@@ -1,7 +1,9 @@
 import propTypes from 'prop-types';
 import ContactFormStyles from './PhonebookCSS/ContactForm.module.css';
+import { useSelector } from 'react-redux';
 
 export const ContactForm = ({ submitFunction }) => {
+  const contacts = useSelector(state => state.contacts);
   const [name, setName] = useState('');
 
   const closeAlert = () => {
