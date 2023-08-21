@@ -21,16 +21,15 @@ export const App = () => {
 
   const handleAdd = id => dispatch(addNewContact(id));
   const handleDelete = data => dispatch(deleteContact(data));
-  const handleSearchQueryInput = ({ value, contacts }) =>
-    dispatch(searchQueryInput({ value, contacts }));
-  /*
+  const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
+
   const handleFilteredContacts = contacts =>
     dispatch(getFilteredContacts(contacts));
 
   useEffect(() => {
     handleFilteredContacts(contacts);
   }, [filter.filter]);
-*/
+
   return (
     <div className={PhonebookStyles.phonebook}>
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
