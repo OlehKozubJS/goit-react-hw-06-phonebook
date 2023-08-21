@@ -43,11 +43,7 @@ export const App = () => {
       <Alert isInContacts={!!name} name={name} clickFunction={closeAlert} />
       <h2 className={PhonebookStyles.contactsHeader}>Contacts</h2>
       <Filter className="filterInput" changeFunction={handleSearchQueryInput} />
-      <ContactList
-        className="contactList"
-        items={filter.filteredContacts}
-        clickFunction={handleDelete}
-      />
+      <ContactList className="contactList" clickFunction={handleDelete} />
     </div>
   );
 };
