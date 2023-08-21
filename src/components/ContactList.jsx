@@ -12,7 +12,7 @@ export const ContactList = ({ clickFunction }) => {
     return filteredItems;
   };
 
-  const data = filter !== '' ? filteredContacts : contacts;
+  const data = getFilteredContacts(filter, contacts);
 
   return (
     <ul className={ContactListStyles.contactList}>
