@@ -3,16 +3,6 @@ import ContactFormStyles from './PhonebookCSS/ContactForm.module.css';
 
 export const ContactForm = ({ submitFunction }) => {
   const [name, setName] = useState('');
-  /*
-      if (
-        state.some(
-          contact =>
-            contact.name.toLowerCase() === action.payload.name.toLowerCase()
-        )
-      ) {
-        return;
-      }
-*/
 
   const closeAlert = () => {
     setName('');
@@ -21,7 +11,15 @@ export const ContactForm = ({ submitFunction }) => {
   const handleSubmit = event => {
     event.preventDefault();
     const { name, number } = event.currentTarget.elements;
-    submitFunction({ name: name.value, number: number.value });
+    if (
+      contacts.some(
+        contact => contact.name.toLowerCase() === name.value.toLowerCase()
+      )
+    ) {
+      return;
+    } else {
+      submitFunction({ name: name.value, number: number.value });
+    }
     event.currentTarget.reset();
   };
 
