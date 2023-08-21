@@ -20,6 +20,7 @@ export const ContactForm = ({ submitFunction }) => {
         contact => contact.name.toLowerCase() === name.value.toLowerCase()
       )
     ) {
+      setName(name.value);
       return;
     } else {
       submitFunction({ name: name.value, number: number.value });
