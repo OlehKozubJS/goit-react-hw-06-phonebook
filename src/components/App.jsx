@@ -31,7 +31,6 @@ export const App = () => {
 
   return (
     <div className={PhonebookStyles.phonebook}>
-      <div>{JSON.stringify(filter.filteredContacts) + ' ' + filter.filter}</div>
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
       <ContactForm submitFunction={handleAdd} />
       <h2 className={PhonebookStyles.contactsHeader}>Contacts</h2>
