@@ -5,7 +5,7 @@ export const ContactList = ({ clickFunction }) => {
   const contacts = useSelector(state => state.contacts);
   const filteredContacts = useSelector(state => state.filter.filteredContacts);
   const filter = useSelector(state => state.filter);
-  const data = filter ? filteredContacts : contacts;
+  const data = filter !== '' ? filteredContacts : contacts;
 
   return (
     <ul className={ContactListStyles.contactList}>
