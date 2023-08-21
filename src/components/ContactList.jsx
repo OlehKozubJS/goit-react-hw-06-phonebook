@@ -3,10 +3,13 @@ import { useSelector } from 'react-redux';
 
 export const ContactList = ({ clickFunction }) => {
   const contacts = useSelector(state => state.contacts);
+  const filteredContacts = useSelector(state => state.filter.filteredContacts);
+  const filter = useSelector(state => state.filter);
+  const data = filter ? filteredContacts : contacts;
 
   return (
     <ul className={ContactListStyles.contactList}>
-      {contacts.map(item => (
+      {data.map(item => (
         <li key={item.id} className={ContactListStyles.contactListItem}>
           <span className={ContactListStyles.contactListItemText}>
             {item.name}: {item.number}
