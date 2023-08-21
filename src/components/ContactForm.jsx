@@ -23,6 +23,7 @@ export const ContactForm = ({ submitFunction }) => {
       setName(name.value);
     } else {
       submitFunction({ name: name.value, number: number.value });
+      setName('');
     }
     event.currentTarget.reset();
   };
