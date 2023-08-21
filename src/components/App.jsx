@@ -2,9 +2,7 @@ import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
 import { Filter } from './Filter';
 import PhonebookStyles from './PhonebookCSS/Pnonebook.module.css';
-import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
 import {
   addNewContact,
   deleteContact,
