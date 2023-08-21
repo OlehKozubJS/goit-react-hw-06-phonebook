@@ -18,7 +18,6 @@ import {
 export const App = () => {
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
-  const [name, setName] = useState('');
   const dispatch = useDispatch();
 
   const handleDelete = data => dispatch(deleteContact(data));
@@ -36,7 +35,6 @@ export const App = () => {
       <div>{JSON.stringify(filter.filteredContacts) + ' ' + filter.filter}</div>
       <h1 className={PhonebookStyles.phonebookHeader}>Phonebook</h1>
       <ContactForm submitFunction={handleAdd} />
-      <Alert isInContacts={!!name} name={name} clickFunction={closeAlert} />
       <h2 className={PhonebookStyles.contactsHeader}>Contacts</h2>
       <Filter className="filterInput" changeFunction={handleSearchQueryInput} />
       <ContactList className="contactList" clickFunction={handleDelete} />
