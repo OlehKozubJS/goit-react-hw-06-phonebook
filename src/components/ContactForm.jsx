@@ -21,7 +21,6 @@ export const ContactForm = ({ submitFunction }) => {
       )
     ) {
       setName(name.value);
-      return;
     } else {
       submitFunction({ name: name.value, number: number.value });
     }
