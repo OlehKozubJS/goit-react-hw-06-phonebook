@@ -19,8 +19,8 @@ export const App = () => {
   const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
 
-  const handleDelete = data => dispatch(deleteContact(data));
   const handleAdd = id => dispatch(addNewContact(id));
+  const handleDelete = data => dispatch(deleteContact(data));
   const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
   const handleFilteredContacts = contacts =>
     dispatch(getFilteredContacts(contacts));
