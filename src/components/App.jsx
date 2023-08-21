@@ -27,10 +27,6 @@ export const App = () => {
   const handleFilteredContacts = contacts =>
     dispatch(getFilteredContacts(contacts));
 
-  const closeAlert = () => {
-    setName('');
-  };
-
   useEffect(() => {
     handleFilteredContacts(contacts);
   }, [filter.filter]);
