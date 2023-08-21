@@ -21,8 +21,8 @@ export const App = () => {
 
   const handleAdd = id => dispatch(addNewContact(id));
   const handleDelete = data => dispatch(deleteContact(data));
-  const handleSearchQueryInput = (value, contacts) =>
-    dispatch(searchQueryInput(value, contacts));
+  const handleSearchQueryInput = ({ value, contacts }) =>
+    dispatch(searchQueryInput({ value, contacts }));
   /*
   const handleFilteredContacts = contacts =>
     dispatch(getFilteredContacts(contacts));
