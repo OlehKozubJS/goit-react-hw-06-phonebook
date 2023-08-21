@@ -1,24 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const filterInitialState = { filter: '', filteredContacts: [] };
+const filterInitialState = '';
 
 const filterSlice = createSlice({
   name: 'filter',
   initialState: filterInitialState,
   reducers: {
     searchQueryInput(state, action) {
-      state.filter = action.payload;
-      return state;
-    },
-    getFilteredContacts(state, action) {
-      const filteredContacts = action.payload.filter(contact =>
-        contact.name.toLowerCase().includes(state.filter.toLowerCase())
-      );
-      state.filteredContacts = filteredContacts;
+      state = action.payload;
       return state;
     },
   },
 });
 
-export const { searchQueryInput, getFilteredContacts } = filterSlice.actions;
+export const { searchQueryInput } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;
