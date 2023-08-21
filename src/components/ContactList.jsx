@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 export const ContactList = ({ clickFunction }) => {
   const contacts = useSelector(state => state.contacts);
   const filteredContacts = useSelector(state => state.filter.filteredContacts);
-  const filter = useSelector(state => state.filter);
+  const filter = useSelector(state => state.filter.filter);
   const data = filter !== '' ? filteredContacts : contacts;
 
   return (
