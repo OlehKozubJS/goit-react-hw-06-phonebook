@@ -34,7 +34,7 @@ export const App = () => {
   useEffect(() => {
     console.log(handleFilteredContacts(contacts).payload);
     console.log(filter);
-  }, [searchQueryInput]);
+  }, [handleSearchQueryInput]);
 
   return (
     <div className={PhonebookStyles.phonebook}>
