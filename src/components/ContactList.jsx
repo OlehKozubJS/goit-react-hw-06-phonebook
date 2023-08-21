@@ -5,13 +5,12 @@ export const ContactList = ({ clickFunction }) => {
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
 
-  const getFilteredContacts = (query, items) {
-    const filteredContacts = action.payload.filter(contact =>
-      contact.name.toLowerCase().includes(state.filter.toLowerCase())
+  const getFilteredContacts = (query, items) => {
+    const filteredItems = items.filter(contact =>
+      contact.name.toLowerCase().includes(query.toLowerCase())
     );
-    state.filteredContacts = filteredContacts;
-    return state;
-  }
+    return filteredItems;
+  };
 
   const data = filter !== '' ? filteredContacts : contacts;
 
