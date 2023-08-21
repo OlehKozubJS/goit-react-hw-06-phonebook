@@ -2,6 +2,7 @@ import propTypes from 'prop-types';
 import ContactFormStyles from './PhonebookCSS/ContactForm.module.css';
 
 export const ContactForm = ({ submitFunction }) => {
+  const [name, setName] = useState('');
   /*
       if (
         state.some(
@@ -12,6 +13,10 @@ export const ContactForm = ({ submitFunction }) => {
         return;
       }
 */
+
+  const closeAlert = () => {
+    setName('');
+  };
 
   const handleSubmit = event => {
     event.preventDefault();
