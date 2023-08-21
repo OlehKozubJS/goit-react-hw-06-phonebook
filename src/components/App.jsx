@@ -1,7 +1,6 @@
 import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
 import { Filter } from './Filter';
-import { Alert } from './Alert';
 import PhonebookStyles from './PhonebookCSS/Pnonebook.module.css';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
