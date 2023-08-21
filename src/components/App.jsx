@@ -9,26 +9,14 @@ import {
   addNewContact,
   deleteContact,
 } from '../components/redux/contactsSlice';
-import {
-  searchQueryInput,
-  getFilteredContacts,
-} from '../components/redux/filterSlice';
+import { searchQueryInput } from '../components/redux/filterSlice';
 
 export const App = () => {
-  const contacts = useSelector(state => state.contacts);
-  const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
 
   const handleAdd = id => dispatch(addNewContact(id));
   const handleDelete = data => dispatch(deleteContact(data));
   const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
-
-  const handleFilteredContacts = contacts =>
-    dispatch(getFilteredContacts(contacts));
-
-  useEffect(() => {
-    handleFilteredContacts(contacts);
-  }, [filter.filter]);
 
   return (
     <div className={PhonebookStyles.phonebook}>
