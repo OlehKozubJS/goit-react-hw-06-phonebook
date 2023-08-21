@@ -3,8 +3,16 @@ import { useSelector } from 'react-redux';
 
 export const ContactList = ({ clickFunction }) => {
   const contacts = useSelector(state => state.contacts);
-  const filteredContacts = useSelector(state => state.filter.filteredContacts);
-  const filter = useSelector(state => state.filter.filter);
+  const filter = useSelector(state => state.filter);
+
+  const getFilteredContacts = (query, items) {
+    const filteredContacts = action.payload.filter(contact =>
+      contact.name.toLowerCase().includes(state.filter.toLowerCase())
+    );
+    state.filteredContacts = filteredContacts;
+    return state;
+  }
+
   const data = filter !== '' ? filteredContacts : contacts;
 
   return (
