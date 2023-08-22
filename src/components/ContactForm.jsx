@@ -4,21 +4,14 @@ import { Alert } from './Alert';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import {
-  addNewContact,
-  deleteContact,
-} from '../components/redux/contactsSlice';
-import { searchQueryInput } from '../components/redux/filterSlice';
+import { addNewContact } from '../components/redux/contactsSlice';
 import { nanoid } from 'nanoid';
 
 export const ContactForm = ({ submitFunction }) => {
   const contacts = useSelector(state => state.contacts);
   const [name, setName] = useState('');
   const dispatch = useDispatch();
-
   const handleAdd = id => dispatch(addNewContact(id));
-  const handleDelete = data => dispatch(deleteContact(data));
-  const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
 
   const closeAlert = () => {
     setName('');
@@ -34,7 +27,7 @@ export const ContactForm = ({ submitFunction }) => {
     ) {
       setName(name.value);
     } else {
-      submitFunction({ id: nanoid(), name: name.value, number: number.value });
+      handleAdd({ id: nanoid(), name: name.value, number: number.value });
       setName('');
     }
     event.currentTarget.reset();
