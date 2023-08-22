@@ -1,5 +1,6 @@
 import propTypes from 'prop-types';
 import FilterStyles from './PhonebookCSS/Filter.module.css';
+import { useDispatch } from 'react-redux';
 
 export const Filter = ({ changeFunction }) => {
   const dispatch = useDispatch();
