@@ -1,8 +1,7 @@
 import ContactFormStyles from './PhonebookCSS/ContactForm.module.css';
 import { Alert } from './Alert';
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { addNewContact } from '../components/redux/contactsSlice';
 import { nanoid } from 'nanoid';
 
