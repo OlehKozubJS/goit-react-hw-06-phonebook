@@ -3,6 +3,7 @@ import ContactFormStyles from './PhonebookCSS/ContactForm.module.css';
 import { Alert } from './Alert';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export const ContactForm = ({ submitFunction }) => {
   const contacts = useSelector(state => state.contacts);
