@@ -4,6 +4,11 @@ import { useSelector } from 'react-redux';
 export const ContactList = ({ clickFunction }) => {
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
+  const dispatch = useDispatch();
+
+  const handleAdd = id => dispatch(addNewContact(id));
+  const handleDelete = data => dispatch(deleteContact(data));
+  const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
 
   const getFilteredContacts = (query, items) => {
     const filteredItems = items.filter(contact =>
