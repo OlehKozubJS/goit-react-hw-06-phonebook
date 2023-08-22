@@ -9,6 +9,7 @@ import {
   deleteContact,
 } from '../components/redux/contactsSlice';
 import { searchQueryInput } from '../components/redux/filterSlice';
+import { nanoid } from 'nanoid';
 
 export const ContactForm = ({ submitFunction }) => {
   const contacts = useSelector(state => state.contacts);
