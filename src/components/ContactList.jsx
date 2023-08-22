@@ -1,6 +1,6 @@
 import ContactListStyles from './PhonebookCSS/ContactList.module.css';
 import { useDispatch } from 'react-redux';
-import { contacts, filter } from '../redux/selectors';
+import { getContacts, getFilter } from '../redux/selectors';
 import { deleteContact } from '../redux/contactsSlice';
 
 export const ContactList = () => {
@@ -13,7 +13,7 @@ export const ContactList = () => {
     return filteredItems;
   };
 
-  const data = getFilteredContacts(filter, contacts);
+  const data = getFilteredContacts(getFilter, getContacts);
 
   return (
     <ul className={ContactListStyles.contactList}>
