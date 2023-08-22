@@ -1,20 +1,12 @@
 import ContactListStyles from './PhonebookCSS/ContactList.module.css';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import {
-  addNewContact,
-  deleteContact,
-} from '../components/redux/contactsSlice';
-import { searchQueryInput } from '../components/redux/filterSlice';
+import { deleteContact } from '../components/redux/contactsSlice';
 
-export const ContactList = ({ clickFunction }) => {
+export const ContactList = () => {
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();
-
-  const handleAdd = id => dispatch(addNewContact(id));
-  const handleDelete = data => dispatch(deleteContact(data));
-  const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
 
   const getFilteredContacts = (query, items) => {
     const filteredItems = items.filter(contact =>
@@ -35,7 +27,9 @@ export const ContactList = ({ clickFunction }) => {
           <button
             data-id={item.id}
             className={ContactListStyles.contactListItemButton}
-            onClick={event => clickFunction(event.currentTarget.dataset.id)}
+            onClick={event =>
+              dispatch(deleteContact(event.currentTarget.dataset.id))
+            }
           >
             Delete
           </button>
