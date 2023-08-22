@@ -11,7 +11,6 @@ export const ContactForm = () => {
   const contacts = useSelector(state => state.contacts);
   const [name, setName] = useState('');
   const dispatch = useDispatch();
-  const handleAdd = id => dispatch(addNewContact(id));
 
   const closeAlert = () => {
     setName('');
@@ -27,7 +26,9 @@ export const ContactForm = () => {
     ) {
       setName(name.value);
     } else {
-      handleAdd({ id: nanoid(), name: name.value, number: number.value });
+      dispatch(
+        addNewContact({ id: nanoid(), name: name.value, number: number.value })
+      );
       setName('');
     }
     event.currentTarget.reset();
