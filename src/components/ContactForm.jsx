@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { addNewContact } from '../components/redux/contactsSlice';
 import { nanoid } from 'nanoid';
 
-export const ContactForm = ({ submitFunction }) => {
+export const ContactForm = () => {
   const contacts = useSelector(state => state.contacts);
   const [name, setName] = useState('');
   const dispatch = useDispatch();
