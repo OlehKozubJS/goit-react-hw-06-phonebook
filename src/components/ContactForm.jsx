@@ -4,6 +4,11 @@ import { Alert } from './Alert';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import {
+  addNewContact,
+  deleteContact,
+} from '../components/redux/contactsSlice';
+import { searchQueryInput } from '../components/redux/filterSlice';
 
 export const ContactForm = ({ submitFunction }) => {
   const contacts = useSelector(state => state.contacts);
