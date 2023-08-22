@@ -1,4 +1,3 @@
-import propTypes from 'prop-types';
 import ContactFormStyles from './PhonebookCSS/ContactForm.module.css';
 import { Alert } from './Alert';
 import { useState } from 'react';
@@ -71,8 +70,4 @@ export const ContactForm = () => {
       <Alert isInContacts={!!name} name={name} clickFunction={closeAlert} />
     </>
   );
-};
-
-ContactForm.propTypes = {
-  submitFunction: propTypes.func.isRequired,
 };
