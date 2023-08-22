@@ -7,6 +7,11 @@ import { useSelector } from 'react-redux';
 export const ContactForm = ({ submitFunction }) => {
   const contacts = useSelector(state => state.contacts);
   const [name, setName] = useState('');
+  const dispatch = useDispatch();
+
+  const handleAdd = id => dispatch(addNewContact(id));
+  const handleDelete = data => dispatch(deleteContact(data));
+  const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
 
   const closeAlert = () => {
     setName('');
