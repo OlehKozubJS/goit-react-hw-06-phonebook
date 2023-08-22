@@ -2,6 +2,12 @@ import propTypes from 'prop-types';
 import FilterStyles from './PhonebookCSS/Filter.module.css';
 
 export const Filter = ({ changeFunction }) => {
+  const dispatch = useDispatch();
+
+  const handleAdd = id => dispatch(addNewContact(id));
+  const handleDelete = data => dispatch(deleteContact(data));
+  const handleSearchQueryInput = value => dispatch(searchQueryInput(value));
+
   return (
     <label htmlFor="searchInput" className={FilterStyles.searchInputLabel}>
       <h3 className={FilterStyles.searchInputHeader}>Find contacts by name</h3>
