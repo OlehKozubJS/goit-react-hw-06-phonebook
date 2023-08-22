@@ -1,5 +1,5 @@
 import ContactListStyles from './PhonebookCSS/ContactList.module.css';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { getContacts, getFilter } from '../redux/selectors';
 import { deleteContact } from '../redux/contactsSlice';
 
