@@ -1,6 +1,6 @@
 import ContactListStyles from './PhonebookCSS/ContactList.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from '../components/redux/contactsSlice';
+import { deleteContact } from '../redux/contactsSlice';
 
 export const ContactList = () => {
   const contacts = useSelector(state => state.contacts);
