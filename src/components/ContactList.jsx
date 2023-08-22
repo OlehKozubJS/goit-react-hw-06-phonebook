@@ -4,6 +4,8 @@ import { getContacts, getFilter } from '../redux/selectors';
 import { deleteContact } from '../redux/contactsSlice';
 
 export const ContactList = () => {
+  const contacts = useSelector(getContacts);
+  const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
   const getFilteredContacts = (query, items) => {
@@ -13,7 +15,7 @@ export const ContactList = () => {
     return filteredItems;
   };
 
-  const data = getFilteredContacts(getFilter, getContacts);
+  const data = getFilteredContacts(filter, contacts);
 
   return (
     <ul className={ContactListStyles.contactList}>
