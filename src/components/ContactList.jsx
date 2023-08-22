@@ -1,5 +1,6 @@
 import ContactListStyles from './PhonebookCSS/ContactList.module.css';
 import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export const ContactList = ({ clickFunction }) => {
   const contacts = useSelector(state => state.contacts);
