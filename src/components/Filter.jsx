@@ -1,6 +1,11 @@
 import propTypes from 'prop-types';
 import FilterStyles from './PhonebookCSS/Filter.module.css';
 import { useDispatch } from 'react-redux';
+import {
+  addNewContact,
+  deleteContact,
+} from '../components/redux/contactsSlice';
+import { searchQueryInput } from '../components/redux/filterSlice';
 
 export const Filter = ({ changeFunction }) => {
   const dispatch = useDispatch();
