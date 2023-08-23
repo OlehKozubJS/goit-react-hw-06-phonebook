@@ -6,9 +6,10 @@ const filterSlice = createSlice({
   name: 'filter',
   initialState: filterInitialState,
   reducers: {
-    searchQueryInput(state, action) {
-      state = action.payload;
-      return state;
+    reducers: {
+      searchQueryInput(state, action) {
+        return action.payload;
+      },
     },
   },
 });
